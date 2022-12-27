@@ -6,8 +6,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.primary};
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: ${({ theme }) => theme.fontFamily};
   }
 
   a {
@@ -18,6 +17,18 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-`
+
+  /* Full height layout */ 
+  html, body {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+  #__next {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+`;
 
 export default GlobalStyle
