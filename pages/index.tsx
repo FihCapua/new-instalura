@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Footer } from "../src/components/common/Footer";
 
 import { Menu } from "../src/components/common/Menu";
 
@@ -16,7 +17,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Menu />
+      <div style={{
+        flex: 1,
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}>
+        <Menu />
+        <Footer />
+      </div>
     </>
   );
 }
