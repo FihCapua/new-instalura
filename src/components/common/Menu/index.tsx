@@ -1,3 +1,4 @@
+import { Logo } from "../../theme/Logo";
 import * as Styled from "./style";
 
 export function Menu() {
@@ -20,7 +21,7 @@ export function Menu() {
   ];
   return (
     <Styled.MenuWrapper>
-      <Styled.LeftSide>Logo area (esquerda)</Styled.LeftSide>
+      <Styled.LeftSide><Logo/></Styled.LeftSide>
 
       <Styled.CentralSide>
         {links.map((item) => {
@@ -32,7 +33,7 @@ export function Menu() {
         })}
       </Styled.CentralSide>
 
-      <Styled.RightSide>Buttons area (direita)</Styled.RightSide>
+      <Styled.RightSide>Buttons area </Styled.RightSide>
     </Styled.MenuWrapper>
   );
 }
