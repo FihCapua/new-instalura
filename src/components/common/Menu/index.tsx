@@ -1,4 +1,5 @@
 import { Logo } from "../../theme/Logo";
+import { Button } from "../Button";
 import * as Styled from "./style";
 
 export function Menu() {
@@ -33,7 +34,10 @@ export function Menu() {
         })}
       </Styled.CentralSide>
 
-      <Styled.RightSide>Buttons area </Styled.RightSide>
+      <Styled.RightSide>
+        <Button ghost={true}>Entrar</Button>
+        <Button ghost={false}>Cadastrar</Button>
+      </Styled.RightSide>
     </Styled.MenuWrapper>
   );
 }
