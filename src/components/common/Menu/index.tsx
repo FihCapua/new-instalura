@@ -1,3 +1,4 @@
+import { Typography } from "../../foundation/Typography";
 import { Logo } from "../../theme/Logo";
 import { Button } from "../Button";
 import * as Styled from "./style";
@@ -28,7 +29,7 @@ export function Menu() {
         {links.map((item) => {
           return (
             <li key={item.id}>
-              <a href={item.url}> {item.text} </a>
+              <Typography variant="smallestException" as="a" link={item.url}> {item.text} </Typography>
             </li>
           );
         })}
