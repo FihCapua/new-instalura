@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { TypographyStylesVariantsMap } from "../../foundation/Typography/style";
+import { breakpointsMedia } from "../../theme/utils/breakpointMedia";
 
 export type ButtonBehaviorProps = {
   ghost: boolean;
@@ -16,6 +17,7 @@ const ButtonDefault = css`
 `;
 
 export const Button = styled.button<ButtonBehaviorProps>`
+  font-family: ${({ theme }) => theme.font.family.default};
   border: 0;
   cursor: pointer;
   padding: 12px 26px;
@@ -27,5 +29,13 @@ export const Button = styled.button<ButtonBehaviorProps>`
     &:focus {
     opacity: 0.5;
   }
-  ${TypographyStylesVariantsMap.smallestException}
+
+  ${breakpointsMedia({
+    xs: css`
+      ${TypographyStylesVariantsMap.smallestException}
+    `,
+    md: css`
+      ${TypographyStylesVariantsMap.paragraph1}
+    `
+  })}
 `;
