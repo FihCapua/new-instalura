@@ -39,6 +39,6 @@ export const Button = styled.button<ButtonBehaviorProps>`
     md: css`
       ${TypographyStylesVariantsMap.paragraph1}
       margin: initial;
-    `
+    `,
   })}
 `;

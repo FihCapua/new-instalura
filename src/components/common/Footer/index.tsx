@@ -1,3 +1,4 @@
+import React from "react";
 import * as Styled from "./style";
 
 export function Footer(props) {

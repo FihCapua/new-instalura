@@ -20,10 +20,8 @@ export const Col = styled.div`
 `;
 
 export const Row = styled.div`
-    display: flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  margin-right: -16px;
-  margin-left: -16px;
 `;

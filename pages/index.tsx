@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "../src/components/common/Button";
 import { Footer } from "../src/components/common/Footer";
 
@@ -48,8 +49,6 @@ export default function Home() {
 
               <Button ghost={false}>Cadastrar</Button>
             </Col>
-
-
 
             <Col>
               <img src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png" />

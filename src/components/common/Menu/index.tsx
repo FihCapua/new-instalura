@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+import React from "react";
 import { Typography } from "../../foundation/Typography";
 import { Logo } from "../../theme/Logo";
 import { Button } from "../Button";
@@ -23,13 +25,18 @@ export function Menu() {
   ];
   return (
     <Styled.MenuWrapper>
-      <Styled.LeftSide><Logo/></Styled.LeftSide>
+      <Styled.LeftSide>
+        <Logo />
+      </Styled.LeftSide>
 
       <Styled.CentralSide>
         {links.map((item) => {
           return (
             <li key={item.id}>
-              <Typography variant="smallestException" as="a" link={item.url}> {item.text} </Typography>
+              <Typography variant="smallestException" as="a" link={item.url}>
+                {" "}
+                {item.text}{" "}
+              </Typography>
             </li>
           );
         })}

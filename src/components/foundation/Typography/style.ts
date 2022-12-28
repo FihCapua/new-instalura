@@ -3,12 +3,10 @@ import { TypographyProps } from ".";
 import { breakpointsMedia } from "../../theme/utils/breakpointMedia";
 
 export const TypographyStylesVariantsMap = {
-    paragraph1: css`
+  paragraph1: css`
     font-size: ${({ theme }) => theme.typography.paragraph1.fontSize};
-    font-weight: ${({ theme }) =>
-      theme.typography.paragraph1.fontWeight};
-    line-height: ${({ theme }) =>
-      theme.typography.paragraph1.lineHeight};
+    font-weight: ${({ theme }) => theme.typography.paragraph1.fontWeight};
+    line-height: ${({ theme }) => theme.typography.paragraph1.lineHeight};
   `,
   smallestException: css`
     font-size: ${({ theme }) => theme.typography.smallestException.fontSize};
@@ -23,11 +21,11 @@ export const TextBase = styled.p<TypographyProps>`
   ${(props) => TypographyStylesVariantsMap[props.variant]}
   font-family: ${({ theme }) => theme.font.family.default};
   ${breakpointsMedia({
-      xs: css`
-        text-align: center;
-      `,
-      md: css`
-        text-align: left;
-      `,
-    })}
+    xs: css`
+      text-align: center;
+    `,
+    md: css`
+      text-align: left;
+    `,
+  })}
 `;

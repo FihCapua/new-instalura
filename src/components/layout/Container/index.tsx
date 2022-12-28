@@ -1,3 +1,4 @@
+import React from "react";
 import * as Styled from "./style";
 
 export type ContainerProps = {
@@ -5,9 +6,5 @@ export type ContainerProps = {
 };
 
 export function Container({ children }: ContainerProps) {
-  return (
-    <Styled.Container>
-      {children}
-    </Styled.Container>
-  );
+  return <Styled.Container>{children}</Styled.Container>;
 }
