@@ -33,9 +33,12 @@ export const Button = styled.button<ButtonBehaviorProps>`
   ${breakpointsMedia({
     xs: css`
       ${TypographyStylesVariantsMap.smallestException}
+      margin: auto;
+      display: block;
     `,
     md: css`
       ${TypographyStylesVariantsMap.paragraph1}
+      margin: initial;
     `
   })}
 `;

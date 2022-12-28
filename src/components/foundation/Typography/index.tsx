@@ -11,16 +11,33 @@ export type TypographyProps = {
     | "paragraph1"
     | "paragraph2"
     | "smallestException";
+  align?: "start" | "end" | "center" | "justify";
+  color?:
+    | "light"
+    | "dark"
+    | "primary"
+    | "main"
+    | "border"
+    | "secondary"
+    | "tertiary";
 };
 
 export const Typography = ({
   link,
   as = "p",
-  variant = "smallestException",
+  variant = "paragraph1",
+  align = "center",
+  color = "primary",
   children,
 }: TypographyProps) => {
   return (
-    <Styled.TextBase as={as} variant={variant} href={link}>
+    <Styled.TextBase
+      href={link}
+      as={as}
+      variant={variant}
+      align={align}
+      color={color}
+    >
       {children}
     </Styled.TextBase>
   );

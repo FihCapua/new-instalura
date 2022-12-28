@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { TypographyProps } from ".";
+import { breakpointsMedia } from "../../theme/utils/breakpointMedia";
 
 export const TypographyStylesVariantsMap = {
     paragraph1: css`
@@ -20,4 +21,13 @@ export const TypographyStylesVariantsMap = {
 
 export const TextBase = styled.p<TypographyProps>`
   ${(props) => TypographyStylesVariantsMap[props.variant]}
+  font-family: ${({ theme }) => theme.font.family.default};
+  ${breakpointsMedia({
+      xs: css`
+        text-align: center;
+      `,
+      md: css`
+        text-align: left;
+      `,
+    })}
 `;
