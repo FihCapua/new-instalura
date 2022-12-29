@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../src/components/common/Button";
 import { Footer } from "../src/components/common/Footer";
 
@@ -7,8 +7,12 @@ import { Typography } from "../src/components/foundation/Typography";
 import Head from "../src/components/common/Head";
 import { Container } from "../src/components/layout/Container";
 import { Col, Row } from "../src/components/layout/Grid";
+import { Modal } from "../src/components/common/Modal";
+import { BoxModal } from "../src/components/common/Modal/style";
 
 export default function Home() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       <Head />
@@ -21,6 +25,16 @@ export default function Home() {
           justifyContent: "space-between",
         }}
       >
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setModalOpen(false);
+          }}
+        >
+          <BoxModal data-modal-safe-area="true">
+            Meu modal maravilhoso!
+          </BoxModal>
+        </Modal>
         <Menu />
 
         <Container>
@@ -47,7 +61,14 @@ export default function Home() {
                 earum itaque facere.
               </Typography>
 
-              <Button ghost={false}>Cadastrar</Button>
+              <Button
+                ghost={false}
+                onClick={() => {
+                  setModalOpen(!isModalOpen);
+                }}
+              >
+                Cadastrar
+              </Button>
             </Col>
 
             <Col>
