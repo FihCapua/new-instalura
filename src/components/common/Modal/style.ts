@@ -8,14 +8,17 @@ export const ModalWrapper = styled.div<ModalBehaviorProps>`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  overflow: scroll;
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 100;
+
   ${({ isOpen }) => {
     if (isOpen) {
       return css`
@@ -31,8 +34,8 @@ export const ModalWrapper = styled.div<ModalBehaviorProps>`
 `;
 
 export const BoxModal = styled.div`
-  width: 100%;
-  height: 100vh;
+  width: 50%;
   background-color: #fff;
-  overflow: hidden;
+  display: flex;
+  flex: 1;
 `;
