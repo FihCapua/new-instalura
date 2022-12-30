@@ -1,5 +1,5 @@
 import React from "react";
-import { ModalWrapper } from "./style";
+import { LockScroll, ModalWrapper } from "./style";
 import { motion } from "framer-motion";
 
 export type ModalProps = {
@@ -20,12 +20,14 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
         }
       }}
     >
+      {isOpen && <LockScroll />}
+
       <motion.div
         variants={{
           open: {
             x: 0,
           },
-          closed: { x: "-100%" },
+          closed: { x: "100%" },
         }}
         animate={isOpen ? "open" : "closed"}
         transition={{ duration: 0.5 }}
