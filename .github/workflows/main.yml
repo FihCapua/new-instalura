@@ -9,29 +9,32 @@ env: # environment variables (available in any part of the action)
   NODE_VERSION: 18
 
 jobs: # list of things to do
-  linting:
-    name: Linting # job name (unique id)
-    runs-on: ubuntu-latest # on which machine to run
-    steps: # list of steps
-      - name: Install NodeJS
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+  build:
+    name: Build
+    
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest, macos-latest, windows-latest]
+      fail-fast: false
 
-      - name: Code Checkout
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Code Linting
-        run: npm run linter
-        
-  unit_tests:
-    name: Unit Tests # job name (unique id)
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runs-on }}
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-    - run: npm install
-    - run: npm run test
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: npm install
+      run: npm install
+
+    - name: npm test
+      run: npm test
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+
+    - name: Lint
+      run: npm run lint
