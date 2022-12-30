@@ -2,7 +2,7 @@ import React from "react";
 import * as Styled from "./style";
 
 export type TypographyProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   link?: string;
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "a";
   variant?:

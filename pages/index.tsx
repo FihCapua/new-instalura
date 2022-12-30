@@ -9,9 +9,10 @@ import { Container } from "../src/components/layout/Container";
 import { Col, Row } from "../src/components/layout/Grid";
 import { Modal } from "../src/components/common/Modal";
 import { BoxModal } from "../src/components/common/Modal/style";
+import { FormCadastro } from "../src/components/patterns/FormCadastro";
 
 export default function Home() {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(true);
 
   return (
     <>
@@ -32,7 +33,7 @@ export default function Home() {
           }}
         >
           <BoxModal data-modal-safe-area="true">
-            Meu modal maravilhoso!
+            <FormCadastro />
           </BoxModal>
         </Modal>
         <Menu />
