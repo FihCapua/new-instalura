@@ -20,15 +20,13 @@ jobs:
       # [[AJUSTES GERAIS]]
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '18.12.1' 
 
       # Runs a single command using the runners shell
       - name: Show Node Version!
         run: node -v
       - name: Install dependencies
-        run:  npm run build
+        run:  npm ci
+              npm run build
               npm run test:unit
               npm run lint
 
