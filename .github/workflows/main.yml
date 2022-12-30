@@ -28,17 +28,17 @@ jobs:
       - name: Show Node Version!
         run: node -v
       - name: Install dependencies
-        run: yarn install
+        run: yarn install && npm install
       - name: Run linter!
-        run: yarn run lint
+        run: npm run lint
 ##################################
 # Runs a single command using the runners shell
       - name: Node Version
         run: node -v
       - name: Install de dependencias
-        run: yarn install
+        run: yarn install && npm install
       - name: Roda o Linter!
-        run: yarn run lint
+        run: npm run lint
   unit_tests:
     name: Unit Tests
     runs-on: ubuntu-latest # The type of runner that the job will run on
@@ -62,7 +62,7 @@ jobs:
         run: yarn --prefer-offline
 
       - name: Run Unit Tests
-        run: yarn run test
+        run: npm run test
   integration_tests:
     name: Integration Tests
     runs-on: ubuntu-latest # The type of runner that the job will run on
@@ -86,5 +86,5 @@ jobs:
         run: yarn --prefer-offline
 
       - name: Run Integration Tests
-        run: yarn run test
+        run: npm run test
         
