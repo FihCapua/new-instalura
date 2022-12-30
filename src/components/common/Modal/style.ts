@@ -47,10 +47,16 @@ export const BoxModal = styled.div`
     xs: css`
       width: 100%;
       height: 400px;
+      position: relative;
+      height: 100vh;
     `,
     md: css`
       width: 50%;
       height: 100vh;
+      position: relative;
+      left: 50%;
+      display: flex;
+      justify-content: center;
     `,
   })}
 `;
