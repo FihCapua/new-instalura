@@ -4,6 +4,7 @@ import { breakpointsMedia } from "../../theme/utils/breakpointMedia";
 
 export type ButtonBehaviorProps = {
   ghost: boolean;
+  fullWidth: boolean;
 };
 
 const ButtonGhost = css`
@@ -41,4 +42,15 @@ export const Button = styled.button<ButtonBehaviorProps>`
       margin: initial;
     `,
   })}
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `}
 `;

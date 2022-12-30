@@ -20,6 +20,7 @@ export const TypographyStylesVariantsMap = {
 export const TextBase = styled.p<TypographyProps>`
   ${(props) => TypographyStylesVariantsMap[props.variant]}
   font-family: ${({ theme }) => theme.font.family.default};
+  color: ${({ theme }) => theme.colors.darkText};
   ${breakpointsMedia({
     xs: css`
       text-align: center;
