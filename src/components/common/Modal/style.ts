@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
+import { breakpointsMedia } from "../../theme/utils/breakpointMedia";
 
 export type ModalBehaviorProps = {
   isOpen: boolean;
@@ -18,6 +19,7 @@ export const ModalWrapper = styled.div<ModalBehaviorProps>`
   overflow: hidden;
   transition: 0.3s;
   z-index: 100;
+  justify-content: flex-end;
 
   ${({ isOpen }) => {
     if (isOpen) {
@@ -34,8 +36,27 @@ export const ModalWrapper = styled.div<ModalBehaviorProps>`
 `;
 
 export const BoxModal = styled.div`
-  width: 50%;
+  max-width: 100%;
   background-color: #fff;
   display: flex;
   flex: 1;
+  justify-content: flex-end;
+  padding: 0 65px;
+
+  ${breakpointsMedia({
+    xs: css`
+      width: 100%;
+      height: 400px;
+    `,
+    md: css`
+      width: 50%;
+      height: 100vh;
+    `,
+  })}
+`;
+
+export const LockScroll = createGlobalStyle`
+  body {
+    overflow: hidden;
+  }
 `;

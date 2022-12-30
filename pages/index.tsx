@@ -12,7 +12,7 @@ import { BoxModal } from "../src/components/common/Modal/style";
 import { FormCadastro } from "../src/components/patterns/FormCadastro";
 
 export default function Home() {
-  const [isModalOpen, setModalOpen] = useState(true);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -67,6 +67,7 @@ export default function Home() {
                 onClick={() => {
                   setModalOpen(!isModalOpen);
                 }}
+                fullWidth={false}
               >
                 Cadastrar
               </Button>
