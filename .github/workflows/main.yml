@@ -22,10 +22,10 @@ jobs: # list of things to do
         uses: actions/checkout@v2
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Code Linting
-        run: npm run lint
+        run: npm run linter
         
   unit_tests:
     name: Unit Tests # job name (unique id)
@@ -33,6 +33,5 @@ jobs: # list of things to do
     steps:
     - uses: actions/checkout@v2
     - name: Install modules
-      run: yarn
-    - name: Run tests
-      run: yarn test
+    - run: npm install
+    - run: npm test
