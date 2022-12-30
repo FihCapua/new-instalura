@@ -28,59 +28,9 @@ jobs:
       - name: Show Node Version!
         run: node -v
       - name: Install dependencies
-        run: npm install
-      - name: Run linter!
-        uses: wearerequired/lint-action@v2
-#         run: npm run lint
-##################################
-# Runs a single command using the runners shell
-      - name: Node Version
-        run: node -v
-      - name: Install de dependencias
-        run: npm install
-      - name: Roda o Linter!
-        uses: wearerequired/lint-action@v2
-#         run: npm run lint
-  unit_tests:
-    name: Unit Tests
-    runs-on: ubuntu-latest # The type of runner that the job will run on
-    steps: # Steps represent a sequence of tasks that will be executed as part of the job
-      # [Pre Build-step]
-      - uses: actions/checkout@v2 ## Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '18.12.1'
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      # ####################
+        run: npm ci
+              npm run build
+              npm run test:unit
+              npm run lint
 
-      # Commands that will run:
-      - name: Install Packages
-        run: npm install
-
-      - name: Run Unit Tests
-        run: npm run test
-  integration_tests:
-    name: Integration Tests
-    runs-on: ubuntu-latest # The type of runner that the job will run on
-    steps: # Steps represent a sequence of tasks that will be executed as part of the job
-      # [Pre Build-step]
-      - uses: actions/checkout@v2 ## Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '18.12.1'
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      # ####################
-
-      # Commands that will run:
-      - name: Install Packages
-        run: npm install
-
-      - name: Run Integration Tests
-        run: npm run test
         
