@@ -5,16 +5,13 @@ on:
   pull_request:
     types: [ opened, synchronize ]
 
-env: # environment variables (available in any part of the action)
-  NODE_VERSION: 18
-
 jobs: # list of things to do
   build:
     name: Build
     
     strategy:
       matrix:
-        runs-on: [ubuntu-latest, macos-latest, windows-latest]
+        runs-on: [ubuntu-latest]
       fail-fast: false
 
     runs-on: ${{ matrix.runs-on }}
@@ -36,5 +33,7 @@ jobs: # list of things to do
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
-    - name: Lint
+    - name: Install Lint
+      run: npm i eslint
+    - name: Run Lint
       run: npm run lint
