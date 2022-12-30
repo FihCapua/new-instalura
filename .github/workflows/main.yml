@@ -25,15 +25,13 @@ jobs: # list of things to do
       with:
         node-version: 12.x
 
-    - name: npm install
-      run: npm install
+    - name: yarn install
+      run: yarn install
 
-    - name: npm test
-      run: npm test
+    - name: yarn test
+      run: yarn test
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
-    - name: Install Lint
-      run: npm i eslint
-    - name: Run Lint
-      run: npm run lint
+    - name: Linter
+      run: yarn lint
