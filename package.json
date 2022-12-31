@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start -p 3030"
+    "start": "next start -p 3030",
+    "lint": "eslint --ext=.jsx,.js,.tsx,.ts"
   },
   "dependencies": {
     "framer-motion": "^8.0.2",
