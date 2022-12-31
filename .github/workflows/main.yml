@@ -5,33 +5,18 @@ on:
   pull_request:
     types: [ opened, synchronize ]
 
-jobs: # list of things to do
-  build:
-    name: Build
-    
-    strategy:
-      matrix:
-        runs-on: [ubuntu-latest]
-      fail-fast: false
-
-    runs-on: ${{ matrix.runs-on }}
-    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Set Node.js 18.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 18.x
-
-    - name: yarn install
-      run: yarn install
-
-    - name: yarn test
-      run: yarn test
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-
-    - name: Linter
-      run: yarn lint
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use Node.js 17.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 17.x
+      - run: yarn install
+      - name: Run linter!
+      - run: yarn lint
+      - name: Run Unit Tests
+      - run: yarn run test
