@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x]
 
     steps:
     - name: Checkout repository
@@ -27,7 +27,7 @@ jobs:
       run: npm install
       
     - name: Install Linter
-      run: npm run lint -- --fix
+      run: npm run lint
 
     - name: Run the tests
       run: npm test
