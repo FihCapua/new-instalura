@@ -5,7 +5,12 @@ import { Logo } from "../../theme/Logo";
 import { Button } from "../Button";
 import * as Styled from "./style";
 
-export function Menu() {
+export type MenuProps = {
+  onClick();
+  onCadastrarClick();
+}
+
+export function Menu({ onCadastrarClick }: MenuProps) {
   const links = [
     {
       id: 1,
@@ -43,8 +48,8 @@ export function Menu() {
       </Styled.CentralSide>
 
       <Styled.RightSide>
-        <Button ghost={true}>Entrar</Button>
-        <Button ghost={false}>Cadastrar</Button>
+        <Button ghost={true} fullWidth={false} href="/">Entrar</Button>
+        <Button ghost={false} fullWidth={false} onCadastrarClick={onCadastrarClick}>Cadastrar</Button>
       </Styled.RightSide>
     </Styled.MenuWrapper>
   );
