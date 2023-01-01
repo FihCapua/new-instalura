@@ -36,7 +36,10 @@ export default function Home() {
             <FormCadastro />
           </BoxModal>
         </Modal>
-        <Menu />
+        <Menu
+          onCadastrarClick={() => setModalOpen(true)}
+          onClick={() => setModalOpen(!isModalOpen)}
+        />
 
         <Container>
           <Row>
@@ -64,9 +67,7 @@ export default function Home() {
 
               <Button
                 ghost={false}
-                onClick={() => {
-                  setModalOpen(!isModalOpen);
-                }}
+                onClick={() => setModalOpen(!isModalOpen)}
                 fullWidth={false}
               >
                 Cadastrar
