@@ -48,8 +48,8 @@ export function Menu({ onCadastrarClick }: MenuProps) {
       </Styled.CentralSide>
 
       <Styled.RightSide>
-        <Button ghost={true} fullWidth={false} href="/">Entrar</Button>
-        <Button ghost={false} fullWidth={false} onCadastrarClick={onCadastrarClick}>Cadastrar</Button>
+        <Button href="/" ghost={1} fullwidth={0}>Entrar</Button>
+        <Button onCadastrarClick={onCadastrarClick} ghost={0} fullwidth={0} type='submit'>Cadastrar</Button>
       </Styled.RightSide>
     </Styled.MenuWrapper>
   );
