@@ -5,7 +5,7 @@
 Projeto Instalura desenvolvido no projeto de Bootcamp Jam Stack da Alura, utilizando React, Next.js, Styled Components entre outras tecnologias
 
 
-##Para rodar esse projeto execute os seguintes passos: 
+## Para rodar esse projeto execute os seguintes passos: 
 
 ```
 $ git clone git@github.com:FihCapua/new-instalura.git
