@@ -82,10 +82,9 @@ export default function Home() {
               </Typography>
 
               <Button
-                ghost={false}
+                ghost={0}
                 onClick={() => setModalOpen(!isModalOpen)}
-                fullWidth={false}
-                disabled={false}
+                fullwidth={0}
                 type=""
               >
                 Cadastrar
