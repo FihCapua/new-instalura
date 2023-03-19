@@ -53,37 +53,41 @@ export function FAQScreen({ faqCategories }: FAQScreenProps) {
             Como podemos te ajudar?
           </Typography>
 
-          {faqCategories &&
-            faqCategories.map((category) => (
-              <Col key={category.id}>
-                <Typography
-                  variant="title"
-                  as="h1"
-                  color="tertiary"
-                  align="center"
-                >
-                  {category.title}
-                </Typography>
+          <Col>
+            <Row>
+              {faqCategories &&
+                faqCategories.map((category) => (
+                  <Col key={category.id}>
+                    <Typography
+                      variant="title"
+                      as="h1"
+                      color="tertiary"
+                      align="center"
+                    >
+                      {category.title}
+                    </Typography>
 
-                {faqCategories.map((question) => (
-                  <ul key={question.id}>
-                    <li>
-                      <Typography
-                        link={`/faq/${question.slug}`}
-                        variant="paragraph1"
-                        as="h2"
-                        color="tertiary"
-                        align="justify"
-                      >
-                        {question.questions.map((question) => (
-                          <li key={question.id}>{question.slug}</li>
-                        ))}
-                      </Typography>
-                    </li>
-                  </ul>
+                    {faqCategories.map((question) => (
+                      <ul key={question.id}>
+                        <li>
+                          <Typography
+                            link={`/faq/${question.slug}`}
+                            variant="paragraph1"
+                            as="h2"
+                            color="tertiary"
+                            align="justify"
+                          >
+                            {question.questions.map((question) => (
+                              <li key={question.id}>{question.slug}</li>
+                            ))}
+                          </Typography>
+                        </li>
+                      </ul>
+                    ))}
+                  </Col>
                 ))}
-              </Col>
-            ))}
+            </Row>
+          </Col>
         </Col>
       </Row>
 
