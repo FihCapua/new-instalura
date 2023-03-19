@@ -7,7 +7,6 @@ export const Container = styled.div`
   padding-left: 28px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 32px;
 
   ${breakpointsMedia({
     xs: css`

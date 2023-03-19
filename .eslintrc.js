@@ -17,5 +17,13 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "@typescript-eslint", "prettier"],
-  rules: {},
+  rules: {
+    "@typescript-eslint/no-empty-interface": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+  },
 };
