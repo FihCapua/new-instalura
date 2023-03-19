@@ -1,5 +1,6 @@
 import React from "react";
 import { FAQScreen } from "../../src/components/screens/FAQScreen";
+import SEO from "../../src/infra/components/SEO";
 
 export default function FAQPage(props) {
   /* const [faqCategories, setFaqCategories] = useState([]); */
@@ -12,7 +13,12 @@ export default function FAQPage(props) {
         setFaqCategories(response);
       });
   }); */
-  return <FAQScreen {...props} />;
+  return (
+    <>
+      <SEO headTitle="FAQ" />
+      <FAQScreen {...props} />
+    </>
+  );
 }
 
 export async function getStaticProps() {
