@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import constructAnimation from "../public/page-construction.json";
+import constructAnimation from "../public/images/page-construction.json";
 import { Typography } from "../src/components/foundation/Typography";
 import { Container } from "../src/components/layout/Container";
 
