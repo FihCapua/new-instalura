@@ -12,8 +12,8 @@ export type ButtonBehaviorProps = {
   children: React.ReactNode;
   disabled?: any;
   type?: string;
-  onCadastrarClick?();
-  onClick?();
+  onCadastrarClick?(): void;
+  onClick?(): void;
 };
 
 const ButtonGhost = css`

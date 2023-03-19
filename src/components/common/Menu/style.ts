@@ -33,7 +33,8 @@ export const MenuWrapper = styled.nav`
 
 export const LeftSide = styled.div`
   padding: 0;
-  margin: 0 49px 0 0;
+  margin: 0 auto;
+  margin-bottom: 10px;
   order: 1;
   ${breakpointsMedia({
     md: css`
@@ -78,14 +79,18 @@ export const CentralSide = styled.ul`
   border-bottom: 1px solid #88989e;
   padding: 12px;
 
+  li {
+    padding: 0 5px;
+  }
+
   ${breakpointsMedia({
     md: css`
-      max-width: 332px;
+      max-width: 100%;
       justify-content: space-between;
       flex: 1;
       order: initial;
       border: none;
-      margin: 0;
+      margin: 0 50px;
       padding-top: 0;
       padding-bottom: 0;
     `,

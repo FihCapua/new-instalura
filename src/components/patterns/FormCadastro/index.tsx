@@ -118,7 +118,7 @@ export function FormCadastro() {
         }}
       />
 
-      <Button fullWidth ghost={false} disabled={isFormValid} type="submit">
+      <Button fullwidth={1} ghost={0} disabled={isFormValid} type="submit">
         Cadastrar
       </Button>
 

@@ -1,14 +1,13 @@
-/* eslint-disable prettier/prettier */
 import React from "react";
-import { Typography } from "../../foundation/Typography";
+import { Link } from "../../navigation/link";
 import { Logo } from "../../theme/Logo";
 import { Button } from "../Button";
 import * as Styled from "./style";
 
 export type MenuProps = {
-  onClick();
-  onCadastrarClick();
-}
+  onClick(): void;
+  onCadastrarClick(): void;
+};
 
 export function Menu({ onCadastrarClick }: MenuProps) {
   const links = [
@@ -35,21 +34,27 @@ export function Menu({ onCadastrarClick }: MenuProps) {
       </Styled.LeftSide>
 
       <Styled.CentralSide>
-        {links.map((item) => {
+        {links.map((link) => {
           return (
-            <li key={item.id}>
-              <Typography variant="smallestException" as="a" link={item.url}>
-                {" "}
-                {item.text}{" "}
-              </Typography>
+            <li key={link.id}>
+              <Link href={link.url}>{link.text}</Link>
             </li>
           );
         })}
       </Styled.CentralSide>
 
       <Styled.RightSide>
-        <Button href="/" ghost={1} fullwidth={0}>Entrar</Button>
-        <Button onCadastrarClick={onCadastrarClick} ghost={0} fullwidth={0} type='submit'>Cadastrar</Button>
+        <Button href="/app/login" ghost={1} fullwidth={0}>
+          Entrar
+        </Button>
+        <Button
+          onCadastrarClick={onCadastrarClick}
+          ghost={0}
+          fullwidth={0}
+          type="submit"
+        >
+          Cadastrar
+        </Button>
       </Styled.RightSide>
     </Styled.MenuWrapper>
   );

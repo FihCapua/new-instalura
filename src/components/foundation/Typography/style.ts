@@ -26,7 +26,7 @@ export const TextBase = styled.p<TypographyProps>`
       text-align: center;
     `,
     md: css`
-      text-align: left;
+      text-align: center;
     `,
   })}
 `;
