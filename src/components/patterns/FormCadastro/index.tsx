@@ -13,7 +13,11 @@ const formState = {
   ERROR: "ERROR",
 };
 
-export function FormCadastro() {
+export type FormCadastroProps = {
+  onClose(): void;
+};
+
+export function FormCadastro({ onClose }: FormCadastroProps) {
   const [isFormSubmited, setIsFormSubmited] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(formState.DEFAULT);
 
@@ -48,6 +52,18 @@ export function FormCadastro() {
 
   return (
     <form
+      style={{
+        width: "50%",
+        backgroundColor: "#fff",
+        margin: "0 auto",
+        padding: "40px",
+        borderRadius: "15px",
+        position: "relative",
+        bottom: "45%",
+      }}
+      onClick={() => {
+        onClose;
+      }}
       onSubmit={(event) => {
         event.preventDefault();
 

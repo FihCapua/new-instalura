@@ -28,6 +28,7 @@ export const Container = styled.div`
     `,
     xl: css`
       max-width: 1222px;
+      height: 85vh;
     `,
   })}
 `;

@@ -1,6 +1,14 @@
 import styled, { css } from "styled-components";
 import { breakpointsMedia } from "../../theme/utils/breakpointMedia";
 
+export const Box = styled.div`
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const Col = styled.div`
   display: flex;
   flex-direction: column;

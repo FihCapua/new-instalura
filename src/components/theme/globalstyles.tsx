@@ -7,6 +7,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: ${({ theme }) => theme.font.family.default};
+    background-image: url('/images/bubbles.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
   }
 
   a {

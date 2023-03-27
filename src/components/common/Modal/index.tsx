@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export type ModalProps = {
   children: React.ReactNode;
   isOpen: boolean;
-  onClose();
+  onClose(): void;
 };
 
 export function Modal({ isOpen, onClose, children }: ModalProps) {
