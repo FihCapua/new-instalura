@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "../src/infra/components/SEO";
-import { WebsitePageWrapper } from "../src/components/wrapper/WebsitePageWrapper";
 import HomeScreen from "../src/components/screens/HomeScreen";
+import { WebsitePageWrapper } from "../src/components/wrapper/WebsitePageWrapper";
 
 export default function Home() {
   return (
