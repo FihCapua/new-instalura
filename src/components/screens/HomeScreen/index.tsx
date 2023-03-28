@@ -33,7 +33,7 @@ export default function HomeScreen() {
 
             <Button
               ghost={0}
-              onCadastrarClick={() => websitePageContext.toggleModalCadastro()}
+              onCadastrarClick={() => websitePageContext.toggleModalRegister()}
               fullwidth={0}
             >
               Cadastrar

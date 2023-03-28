@@ -6,6 +6,7 @@ import * as Styled from "./style";
 
 export type MenuProps = {
   onCadastrarClick(): void;
+  onClick?(): void;
 };
 
 export function Menu({ onCadastrarClick }: MenuProps) {

@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import { Footer } from "../../common/Footer";
 import { Menu } from "../../common/Menu";
 import { Modal } from "../../common/Modal";
+import { BoxModal } from "../../common/Modal/style";
 import { Container } from "../../layout/Container";
 import { Box } from "../../layout/Grid/style";
 import { FormCadastro } from "../../patterns/FormCadastro";
@@ -12,7 +13,7 @@ export type WebsitePageProps = {
 
 export const WebsitePageContext = createContext({
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  toggleModalCadastro: () => {},
+  toggleModalRegister: () => {},
 });
 
 export function WebsitePageWrapper({ children }: WebsitePageProps) {
@@ -20,7 +21,7 @@ export function WebsitePageWrapper({ children }: WebsitePageProps) {
   return (
     <WebsitePageContext.Provider
       value={{
-        toggleModalCadastro: () => {
+        toggleModalRegister: () => {
           setModalState(!isModalOpen);
         },
       }}
@@ -34,7 +35,9 @@ export function WebsitePageWrapper({ children }: WebsitePageProps) {
               setModalState(false);
             }}
           >
-            <FormCadastro onClose={() => setModalState(false)} />
+            <BoxModal data-modal-safe-area="true">
+              <FormCadastro />
+            </BoxModal>
           </Modal>
           {children}
           <Footer />

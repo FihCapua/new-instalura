@@ -14,7 +14,7 @@ const formState = {
 };
 
 export type FormCadastroProps = {
-  onClose(): void;
+  onClose?(): void;
 };
 
 export function FormCadastro({ onClose }: FormCadastroProps) {
@@ -52,15 +52,6 @@ export function FormCadastro({ onClose }: FormCadastroProps) {
 
   return (
     <form
-      style={{
-        width: "50%",
-        backgroundColor: "#fff",
-        margin: "0 auto",
-        padding: "40px",
-        borderRadius: "15px",
-        position: "relative",
-        bottom: "45%",
-      }}
       onClick={() => {
         onClose;
       }}
