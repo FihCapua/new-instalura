@@ -22,4 +22,10 @@ export const FooterWrapper = styled.footer`
       opacity: 0.5;
     }
   }
+
+  @media only screen and (max-width: 500px) {
+    p {
+      text-align: center;
+    }
+  }
 `;

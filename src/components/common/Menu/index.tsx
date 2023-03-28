@@ -5,8 +5,8 @@ import { Button } from "../Button";
 import * as Styled from "./style";
 
 export type MenuProps = {
-  onClick(): void;
   onCadastrarClick(): void;
+  onClick?(): void;
 };
 
 export function Menu({ onCadastrarClick }: MenuProps) {
@@ -48,10 +48,10 @@ export function Menu({ onCadastrarClick }: MenuProps) {
           Entrar
         </Button>
         <Button
-          onCadastrarClick={onCadastrarClick}
           ghost={0}
+          onCadastrarClick={onCadastrarClick}
           fullwidth={0}
-          type="submit"
+          type=""
         >
           Cadastrar
         </Button>

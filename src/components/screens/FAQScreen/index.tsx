@@ -6,7 +6,7 @@ import { Modal } from "../../common/Modal";
 import { FormCadastro } from "../../patterns/FormCadastro";
 import { Container } from "../../layout/Container";
 import { BoxModal } from "../../common/Modal/style";
-import { Col, Row } from "../../layout/Grid";
+import { Col, Row } from "../../layout/Grid/style";
 
 export type Categories = {
   id: number;
